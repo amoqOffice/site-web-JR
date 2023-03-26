@@ -1,0 +1,5 @@
+@extends('layouts.app')
+
+@section('content')
+    @include('{{ modelName }}.form', [$title='Modifier {{ modelName }}',  $edit=true, $show=false])
+@endsection

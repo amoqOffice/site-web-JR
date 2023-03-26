@@ -1,0 +1,74 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\{{ namespacedModel }};
+use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Http\Request;
+
+class {{ class }} extends Controller
+{
+    public function index()
+    {
+        ${{ modelVariable }}s = {{ model }}::all();
+
+        return view('{{ model }}.index', compact('{{ modelVariable }}s'));
+    }
+
+    public function create()
+    {
+        return view('{{ model }}.create');
+    }
+
+    public function store(Request $request)
+    {
+        {{ model }}::create($request->all());
+
+        Toastr::success('{{ model }} bien ajouté');
+
+        return redirect()->route('{{ modelVariable }}.create');
+    }
+
+    public function show($id)
+    {
+        ${{ modelVariable }} = {{ model }}::findOrFail($id);
+
+        return view('{{ model }}.show', compact('{{ modelVariable }}'));
+    }
+
+    public function edit($id)
+    {
+        ${{ modelVariable }} = {{ model }}::findOrFail($id);
+
+        return view('{{ model }}.edit', compact('{{ modelVariable }}'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        ${{ modelVariable }} = {{ model }}::findOrFail($id);
+        ${{ modelVariable }}->update($request->all());
+
+        Toastr::success('{{ model }} bien mis à jour');
+
+        return redirect()->route('{{ modelVariable }}.index');
+    }
+
+    public function destroy()
+    {
+        ${{ modelVariable }}Nom = {{ model }}::findOrFail(request('id'))->nom;
+        {{ model }}::destroy(request('id'));
+
+        return response(${{ modelVariable }}Nom);
+    }
+
+    public function destroyAll()
+    {
+        $elements = request('ids');
+
+        foreach ($elements as $element) {
+            {{ model }}::destroy($element);
+        }
+
+        return $elements;
+    }
+}

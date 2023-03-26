@@ -1,0 +1,6 @@
+public function {{ FN_NAME }}()
+    {
+        return $this->{{ FN_TYPE }}({{ MODEL }});
+    }
+
+    //

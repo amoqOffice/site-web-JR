@@ -1,0 +1,12 @@
+                        <!-- Champ {{ name }} -->
+                        <div class="col-md-{{ size }}">
+                            <div class="form-group">
+                                <label> {{ label }}:</label>
+                                <input class="form-control form-control-sm" {{ infos }}value="{{ ${{ modelVariable }}->{{ migrationName }} ?? old('{{ name }}') }}" {{ ($show) ? 'disabled' : ''}}>
+                                {{-- @error('')
+                                    <span class="invalid-feedback">
+                                        {{ $errors->first('') }}
+                                    </span>
+                                @enderror --}}
+                            </div>
+                        </div>

@@ -1,0 +1,30 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class MIGRATION_CLASS_PLACEHOLDER extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('{{ migration_table_name }}', function (Blueprint $table) {
+            $table->unsignedInteger('{{ index_field_name }}');
+            $table->foreign('{{ index_field_name }}')->references('id')->on('{{ migration_table_name }}')->onDelete('cascade');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        # code...
+    }
+}
