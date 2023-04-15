@@ -4,8 +4,8 @@
 		<div class="container">
 			<!-- Logo START -->
 			<a class="navbar-brand" href="index.html">
-				<img class="navbar-brand-item light-mode-item" src="assets/front/images/logo.svg" alt="logo">			
-				<img class="navbar-brand-item dark-mode-item" src="assets/front/images/logo-light.svg" alt="logo">			
+				<img class="navbar-brand-item light-mode-item" src="assets/front/images/logo.svg" alt="logo">
+				<img class="navbar-brand-item dark-mode-item" src="assets/front/images/logo-light.svg" alt="logo">
 			</a>
 			<!-- Logo END -->
 
@@ -18,34 +18,18 @@
 			<!-- Main navbar START -->
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav navbar-nav-scroll ms-auto">
-					
+
 					<!-- Nav item 1 Demos -->
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle active" href="#" id="homeMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
-						<ul class="dropdown-menu" aria-labelledby="homeMenu">
-							<li> <a class="dropdown-item" href="index.html">Home default</a></li>
-							<li> <a class="dropdown-item" href="index-lazy.html">Home lazy load</a></li>
-							<li> <a class="dropdown-item active" href="index-2.html">Magazine classic</a></li>
-							<li> <a class="dropdown-item" href="index-3.html">Magazine</a></li>
-							<li> <a class="dropdown-item" href="index-4.html">Home cards</a></li>
-							<li> <a class="dropdown-item" href="index-5.html">Blog classic</a></li>
-							<li> <a class="dropdown-item" href="index-6.html">Blog Personal </a></li>
-							<li> <a class="dropdown-item" href="index-7.html">Blog Vintage</a></li>
-							<li> <a class="dropdown-item" href="index-8.html">Blog Tech</a></li>
-							<li> <a class="dropdown-item" href="index-9.html">Blog Fashion</a></li>
-							<li> <a class="dropdown-item" href="index-10.html">Blog Podcast</a></li>
-							<li> <a class="dropdown-item" href="index-11.html">Home Shop </a></li>
-						</ul>
-					</li>
+					<li class="nav-item"> <a class="nav-link" href="dashboard.html">Accueil</a></li>
 
 					<!-- Nav item 2 Pages -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prédications</a>
 						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
 							<li> <a class="dropdown-item" href="about-us.html">About</a></li>
 							<li> <a class="dropdown-item" href="contact-us.html">Contact</a></li>
 							<!-- Dropdown submenu -->
-							<li class="dropdown-submenu dropend"> 
+							<li class="dropdown-submenu dropend">
 								<a class="dropdown-item dropdown-toggle" href="#">Shop</a>
 								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
 									<li> <a class="dropdown-item" href="shop-grid.html">Shop grid</a> </li>
@@ -56,7 +40,7 @@
 								</ul>
 							</li>
 							<!-- Dropdown submenu -->
-							<li class="dropdown-submenu dropend"> 
+							<li class="dropdown-submenu dropend">
 								<a class="dropdown-item dropdown-toggle" href="#">Other Archives</a>
 								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
 									<li> <a class="dropdown-item" href="author.html">Author Page</a> </li>
@@ -96,36 +80,36 @@
 								</ul>
 							</li>
 							<li class="dropdown-divider"></li>
-							<li> 
+							<li>
 								<a class="dropdown-item" href="https://support.webestica.com/" target="_blank">
 									<i class="text-warning fa-fw bi bi-life-preserver me-2"></i>Support
-								</a> 
+								</a>
 							</li>
-							<li> 
+							<li>
 								<a class="dropdown-item" href="docs/index.html" target="_blank">
 									<i class="text-danger fa-fw bi bi-card-text me-2"></i>Documentation
-								</a> 
+								</a>
 							</li>
 							<li class="dropdown-divider"></li>
-							<li> 
+							<li>
 								<a class="dropdown-item" href="https://blogzine.webestica.com/rtl" target="_blank">
 									<i class="text-info fa-fw bi bi-toggle-off me-2"></i>RTL demo
-								</a> 
+								</a>
 							</li>
-							<li> 
+							<li>
 								<a class="dropdown-item" href="https://themes.getbootstrap.com/store/webestica/" target="_blank">
 									<i class="text-success fa-fw bi bi-cloud-download-fill me-2"></i>Buy blogzine!
-								</a> 
+								</a>
 							</li>
 						</ul>
 					</li>
 
 					<!-- Nav item 3 Post -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="postMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Post</a>
+						<a class="nav-link dropdown-toggle" href="#" id="postMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Nos Programmes</a>
 						<ul class="dropdown-menu" aria-labelledby="postMenu">
 							<!-- dropdown submenu -->
-							<li class="dropdown-submenu dropend"> 
+							<li class="dropdown-submenu dropend">
 								<a class="dropdown-item dropdown-toggle" href="#">Post grid</a>
 								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
 									<li> <a class="dropdown-item" href="post-grid.html">Post grid</a> </li>
@@ -155,7 +139,7 @@
 
 					<!-- Nav item 4 Mega menu -->
 					<li class="nav-item dropdown dropdown-fullwidth">
-						<a class="nav-link dropdown-toggle" href="#" id="megaMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Lifestyle</a>
+						<a class="nav-link dropdown-toggle" href="#" id="megaMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Emissions TV</a>
 						<div class="dropdown-menu" aria-labelledby="megaMenu">
 							<div class="container">
 								<div class="row g-4 p-3 flex-fill">
@@ -243,17 +227,17 @@
 								</div> <!-- Row END -->
 							</div>
 						</div>
-					</li>	
+					</li>
 
 					<!-- Nav item 5 link-->
-					<li class="nav-item"> <a class="nav-link" href="dashboard.html">Dashboard</a></li>
+					<li class="nav-item"> <a class="nav-link" href="dashboard.html">Bible</a></li>
 				</ul>
 			</div>
 			<!-- Main navbar END -->
 
 			<!-- Nav right START -->
 			<div class="nav flex-nowrap align-items-center ms-3 ms-sm-4">
-				
+
 				<!-- Dark mode options START -->
 				<div class="nav-item dropdown">
 					<!-- Switch button -->
@@ -292,7 +276,7 @@
 				<!-- Dark mode options END -->
 
 				<!-- Nav additional link -->
-				<div class="nav-item dropdown dropdown-toggle-icon-none d-none d-sm-block">
+				{{-- <div class="nav-item dropdown dropdown-toggle-icon-none d-none d-sm-block">
 					<a class="nav-link dropdown-toggle" role="button" href="#" id="navAdditionalLink" data-bs-toggle="dropdown" aria-expanded="false">
 						<i class="bi bi-three-dots fs-4"></i>
 					</a>
@@ -304,13 +288,13 @@
 						<li><a class="dropdown-item fw-normal" href="#">Contact</a></li>
 						<li><a class="dropdown-item fw-normal" href="#"><span class="badge bg-danger me-2 align-middle">2 Job</span>Careers</a></li>
 					</ul>
-				</div>
+				</div> --}}
 				<!-- Nav Button -->
 				<div class="nav-item d-none d-md-block">
-					<a href="#" class="btn btn-sm btn-danger mb-0 mx-2">Subscribe!</a>
+					<a href="#" class="btn btn-sm btn-danger mb-0 mx-2">Faire un don!</a>
 				</div>
 				<!-- Nav Search -->
-				<div class="nav-item dropdown nav-search dropdown-toggle-icon-none">
+				{{-- <div class="nav-item dropdown nav-search dropdown-toggle-icon-none">
 					<a class="nav-link pe-0 dropdown-toggle" role="button" href="#" id="navSearch" data-bs-toggle="dropdown" aria-expanded="false">
 						<i class="bi bi-search fs-4"> </i>
 					</a>
@@ -320,7 +304,7 @@
 							<button class="btn btn-success m-0" type="submit">Search</button>
 						</form>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 			<!-- Nav right END -->
 		</div>
