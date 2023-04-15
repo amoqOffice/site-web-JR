@@ -1,6 +1,6 @@
 public function {{ FN_NAME }}()
     {
-        return $this->{{ FN_TYPE }}({{ MODEL }});
+        return $this->{{ FN_TYPE }}({{ MODEL }}, '{{ migration_table_name }}');
     }
 
     //

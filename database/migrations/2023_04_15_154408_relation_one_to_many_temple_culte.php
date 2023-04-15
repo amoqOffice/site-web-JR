@@ -4,7 +4,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class {{ migration_class }} extends Migration
+class RelationOneToManyTempleCulte extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class {{ migration_class }} extends Migration
      */
     public function up()
     {
-        Schema::table('{{ migration_table_1 }}', function (Blueprint $table) {
-            $table->unsignedInteger('{{ index_field }}')->nullable();
-            $table->foreign('{{ index_field }}')->references('id')->on('{{ migration_table_2 }}')->onDelete('cascade');
+        Schema::table('cultes', function (Blueprint $table) {
+            $table->unsignedInteger('temple_id')->nullable();
+            $table->foreign('temple_id')->references('id')->on('temples')->onDelete('cascade');
         });
     }
 

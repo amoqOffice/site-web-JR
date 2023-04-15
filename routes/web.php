@@ -22,7 +22,8 @@ Route::view('/', ('front/welcome'));
 
 // BACKOFFICE ONLY
 Route::prefix('admin')->group(function () {
-    Route::view('/', ('home'));
+    Route::view('/', ('back/home'));
+    Route::get('/', 'DashboardController@index')->name('back.home');
 });
 
 

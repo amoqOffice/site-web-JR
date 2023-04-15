@@ -171,6 +171,7 @@ class Relation extends Command
                 "{{ FN_NAME }}" => $data->fonction_name,
                 "{{ FN_TYPE }}" => $data->fonction_type,
                 "{{ MODEL }}" => $data->model,
+                "{{ migration_table_name }}" => strtolower($this->models[0]).'_'.strtolower($this->models[1]),
             ]);
 
             $this->remplirFichier($path, $value);
@@ -213,7 +214,7 @@ class Relation extends Command
 
             $this->migration_many_many->migration_class = $this->camelCase($migrationName);
 
-            $this->migration_many_many->migration_table = $this->models[0].'_'.$this->models[1];
+            $this->migration_many_many->migration_table = strtolower($this->models[0]).'_'.strtolower($this->models[1]);
 
             $this->migration_many_many->table1 = strtolower($this->models[0]);
 

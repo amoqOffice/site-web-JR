@@ -14,9 +14,9 @@ class {{ migration_class }} extends Migration
     public function up()
     {
         Schema::create('{{ migration_table }}', function (Blueprint $table) {
-            $table->integer('{{ table1 }}_id')->unsigned();
+            $table->integer('{{ table1 }}_id')->unsigned()->nullable();
             $table->foreign('{{ table1 }}_id')->references('id')->on('{{ table1 }}s');
-            $table->integer('{{ table2 }}_id')->unsigned();
+            $table->integer('{{ table2 }}_id')->unsigned()->nullable();
             $table->foreign('{{ table2 }}_id')->references('id')->on('{{ table2 }}s');
         });
     }
