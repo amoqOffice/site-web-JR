@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    @dd($temple->cultes)
+<h2>Hello</h2>
 @endsection

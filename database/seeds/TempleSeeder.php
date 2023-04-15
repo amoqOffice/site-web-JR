@@ -14,7 +14,7 @@ class TempleSeeder extends Seeder
     {
         for ($i=1; $i < 6; $i++) {
             Temple::create([
-                'nom' => 'Sous-rubrique '.$i,
+                'nom' => 'Temple '.$i,
                 'adresse' => 'adresse '.$i,
                 'adresse_map' => 'adresse_map '.$i,
             ]);
