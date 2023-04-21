@@ -8,6 +8,5 @@ class Enseignement extends Model
 {
     protected $guarded = ['id'];
 
-    
     //
 }

@@ -19,6 +19,7 @@ class CreateEnseignementsTable extends Migration
             $table->string('description');
             $table->string('lieu');
             $table->string('image');
+            $table->string('audio')->nullable();
             $table->timestamps();
         });
     }

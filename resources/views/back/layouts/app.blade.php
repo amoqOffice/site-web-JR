@@ -16,9 +16,9 @@
         <link rel="stylesheet" href="{{ asset('assets/back/css/font-awesome.min.css') }}">
 
 		<!-- Feathericon CSS -->
-        {{-- <link rel="stylesheet" href="{{ asset('assets/back/css/feathericon.min.css') }}"> --}}
+        <link rel="stylesheet" href="{{ asset('assets/back/css/feathericon.min.css') }}">
 
-		{{-- <link rel="stylesheet" href="{{ asset('assets/back/plugins/morris/morris.css') }}"> --}}
+		<link rel="stylesheet" href="{{ asset('assets/back/plugins/morris.css') }}">
 
 		<!-- Main CSS -->
         <link rel="stylesheet" href="{{ asset('assets/back/css/style.css') }}">
@@ -28,15 +28,15 @@
 
         @yield('css')
     <style>
-        .subdrop {
+        /* .subdrop {
             font-weight: bold !important;
-        }
+        } */
         /* .form-check-input {
             cursor: pointer
         } */
-        input[type=checkbox], input[type=radio] {
+        /* input[type=checkbox], input[type=radio] {
             cursor: pointer
-        }
+        } */
     </style>
     </head>
     <body class="mini-sidebars">
@@ -45,10 +45,10 @@
         <div class="main-wrapper">
 
 			<!-- Header -->
-            @include('layouts.header')
+            {{-- @include('back.layouts.header') --}}
 
 			<!-- Sidebar -->
-            @include('layouts.menu')
+            @include('back.layouts.menu')
 
 			<!-- Page Wrapper -->
             <div class="page-wrapper">
@@ -63,11 +63,14 @@
         <script src="{{ asset('assets/back/js/jquery-3.2.1.min.js') }}"></script>
 
 		<!-- Bootstrap Core JS -->
-        {{-- <script src="{{ asset('assets/back/js/popper.min.js') }}"></script> --}}
+        <script src="{{ asset('assets/back/js/popper.min.js') }}"></script>
         <script src="{{ asset('assets/back/js/bootstrap.min.js') }}"></script>
 
 		<!-- Slimscroll JS -->
-        {{-- <script src="{{ asset('assets/back/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script> --}}
+        <script src="{{ asset('assets/back/plugins/jquery.slimscroll.min.js') }}"></script>
+
+        <!-- Raphael JS -->
+        {{-- <script src="{{ asset('assets/back/plugins/raphael.min.js') }}"></script> --}}
 
 		<!-- Custom JS -->
         <script  src="{{ asset('assets/back/js/script.js') }}"></script>
@@ -89,12 +92,12 @@
                 });
             });
 
-            $('.item-nav').click(function(e) {
-                e.preventDefault();
-                console.log('link:' + $(this).attr('href'))
+            // $('.item-nav').click(function(e) {
+            //     e.preventDefault();
+            //     console.log('link:' + $(this).attr('href'))
 
-                $('.contenu').load( $(this).attr('href'))
-            });
+            //     $('.contenu').load( $(this).attr('href'))
+            // });
         </script>
 
     </body>

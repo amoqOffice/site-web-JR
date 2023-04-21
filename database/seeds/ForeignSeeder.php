@@ -22,34 +22,45 @@ class ForeignSeeder extends Seeder
         // Relation Responsable et Enseignements
         $responsable = Responsable::find(1);
         $responsable->enseignements()->sync([1,2]);
+
         $responsable = Responsable::find(2);
         $responsable->enseignements()->sync([3,4]);
+
         $responsable = Responsable::find(3);
         $responsable->enseignements()->sync([5]);
+
 
         // Relation Responsable et Temple
         $responsable = Responsable::find(1);
         $responsable->temples()->sync([1,2]);
+
         $responsable = Responsable::find(2);
         $responsable->temples()->sync([3,4]);
+
         $responsable = Responsable::find(3);
         $responsable->temples()->sync([5]);
+
 
         // Relation Responsable et Culte
         $responsable = Responsable::find(1);
         $responsable->cultes()->sync([1,2]);
+
         $responsable = Responsable::find(2);
         $responsable->cultes()->sync([3,4]);
+
         $responsable = Responsable::find(3);
         $responsable->cultes()->sync([5]);
 
+        
         // Relation Enseignement et Rubrique
-        $responsable = Enseignement::find(1);
-        $responsable->rubriques()->sync([1,2]);
-        $responsable = Enseignement::find(2);
-        $responsable->rubriques()->sync([3,4]);
-        $responsable = Enseignement::find(3);
-        $responsable->rubriques()->sync([5]);
+        $enseignement = Enseignement::find(1);
+        $enseignement->rubriques()->sync([1,2]);
+
+        $enseignement = Enseignement::find(2);
+        $enseignement->rubriques()->sync([3,4]);
+
+        $enseignement = Enseignement::find(3);
+        $enseignement->rubriques()->sync([5]);
 
         // Relation Rubrique et Subheading
         $subheading1 = Subheading::find(1);

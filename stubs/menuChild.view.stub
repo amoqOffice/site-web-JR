@@ -1,5 +1,5 @@
-{{-- {{ menuName }}s --}}<
-li class="submenu my-2">
+{{-- {{ menuName }}s --}}
+<li class="submenu my-2">
     <a href="#"><i class="{{ menuIcon }}"></i> <span> {{ menuName }}s</span> <span class="menu-arrow"></span></a>
     <ul style="display: none;">
         <li><a class="{{ request()->is('{{ modelVariable }}/create') ? 'active' : '' }}" href="{{ route('{{ modelVariable }}.create') }}">Ajouter</a></li>

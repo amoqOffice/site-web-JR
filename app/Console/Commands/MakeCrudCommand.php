@@ -108,7 +108,7 @@ class MakeCrudCommand extends Command
 
         $modelVariable = strtolower($name);
 
-        $viewPath = "/ressources/views/$modelName/$viewName.blade.php";
+        $viewPath = "/resources/views/back/$modelName/$viewName.blade.php";
 
         $this->createDir($viewPath);
 
@@ -173,7 +173,7 @@ class MakeCrudCommand extends Command
 
 
         foreach ($views as $viewName) {
-            $viewPath = "resources/views/$modelName/$viewName.blade.php";
+            $viewPath = "resources/views/back/$modelName/$viewName.blade.php";
 
             $this->createDir($viewPath);
 
@@ -261,7 +261,7 @@ class MakeCrudCommand extends Command
 
         $modelVariable = lcfirst($name);
 
-        $formPath = "resources/views/$modelName/form.blade.php";
+        $formPath = "resources/views/back/$modelName/form.blade.php";
 
         $formInputsNames = [];
 
@@ -413,7 +413,7 @@ class MakeCrudCommand extends Command
         $menu = str_replace('{{ menuName }}', $modelName, $menu);
         $menu = str_replace('{{ modelVariable }}', $modelVariable, $menu);
 
-        $this->files->append('resources/views/layouts/menuChild.blade.php', $menu);
+        $this->files->append('resources/views/back/layouts/menuChild.blade.php', $menu);
 
         $this->info('Menu bien mis à jour');
     }
@@ -422,7 +422,7 @@ class MakeCrudCommand extends Command
     {
         $modelName = ucfirst($argument);
         $modelVariable = lcfirst($argument);
-        $indexPath = "resources/views/$modelName/index.blade.php";
+        $indexPath = "resources/views/back/$modelName/index.blade.php";
         $columnsValues = '';
         $columnsNames = '';
 

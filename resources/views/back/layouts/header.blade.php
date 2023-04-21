@@ -1,11 +1,12 @@
+<!-- Header -->
 <div class="header">
 
     <!-- Logo -->
     <div class="header-left">
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
             <img src="{{ asset('assets/back/img/logo.png') }}" alt="Logo">
         </a>
-        <a href="#" class="logo logo-small">
+        <a href="index.html" class="logo logo-small">
             <img src="{{ asset('assets/back/img/logo-small.png') }}" alt="Logo" width="30" height="30">
         </a>
     </div>
@@ -15,12 +16,12 @@
         <i class="fe fe-text-align-left"></i>
     </a>
 
-    {{-- <div class="top-nav-search">
+    <div class="top-nav-search">
         <form>
             <input type="text" class="form-control" placeholder="Search here">
             <button class="btn" type="submit"><i class="fa fa-search"></i></button>
         </form>
-    </div> --}}
+    </div>
 
     <!-- Mobile Menu Toggle -->
     <a class="mobile_btn" id="mobile_btn">
@@ -30,8 +31,26 @@
 
     <!-- Header Right Menu -->
     <ul class="nav user-menu">
+
+        <!-- App Lists -->
+        <li class="nav-item dropdown app-dropdown">
+            <a class="nav-link dropdown-toggle" aria-expanded="false" role="button" data-toggle="dropdown" href="#"><i class="fe fe-app-menu"></i></a>
+            <ul class="dropdown-menu app-dropdown-menu">
+                <li>
+                    <div class="app-list">
+                        <div class="row">
+                            <div class="col"><a class="app-item" href="inbox.html"><i class="fa fa-envelope"></i><span>Email</span></a></div>
+                            <div class="col"><a class="app-item" href="calendar.html"><i class="fa fa-calendar"></i><span>Calendar</span></a></div>
+                            <div class="col"><a class="app-item" href="chat.html"><i class="fa fa-comments"></i><span>Chat</span></a></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
+        <!-- /App Lists -->
+
         <!-- Notifications -->
-        {{-- <li class="nav-item dropdown noti-dropdown">
+        <li class="nav-item dropdown noti-dropdown">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                 <i class="fe fe-bell"></i> <span class="badge badge-pill">3</span>
             </a>
@@ -46,7 +65,7 @@
                             <a href="#">
                                 <div class="media">
                                     <span class="avatar avatar-sm">
-                                        <img class="avatar-img rounded-circle" alt="User Image" src="assets/back/img/profiles/avatar-02.jpg">
+                                        <img class="avatar-img rounded-circle" alt="User Image" src="{{ asset('assets/back/img/profiles/avatar-02.jpg') }}">
                                     </span>
                                     <div class="media-body">
                                         <p class="noti-details"><span class="noti-title">Carlson Tech</span> has approved <span class="noti-title">your estimate</span></p>
@@ -59,7 +78,7 @@
                             <a href="#">
                                 <div class="media">
                                     <span class="avatar avatar-sm">
-                                        <img class="avatar-img rounded-circle" alt="User Image" src="assets/back/img/profiles/avatar-11.jpg">
+                                        <img class="avatar-img rounded-circle" alt="User Image" src="{{ asset('assets/back/img/profiles/avatar-11.jpg') }}">
                                     </span>
                                     <div class="media-body">
                                         <p class="noti-details"><span class="noti-title">International Software Inc</span> has sent you a invoice in the amount of <span class="noti-title">$218</span></p>
@@ -73,6 +92,9 @@
                                 <div class="media">
                                     <span class="avatar avatar-sm">
                                         <img class="avatar-img rounded-circle" alt="User Image" src="assets/back/img/profiles/avatar-17.jpg">
+                                    </span>
+                                    <span class="avatar">
+                                        <span class="avatar-title rounded-circle border border-white">CV</span>
                                     </span>
                                     <div class="media-body">
                                     <p class="noti-details"><span class="noti-title">John Hendry</span> sent a cancellation request <span class="noti-title">Apple iPhone XR</span></p>
@@ -100,24 +122,27 @@
                     <a href="#">View all Notifications</a>
                 </div>
             </div>
-        </li> --}}
+        </li>
         <!-- /Notifications -->
 
         <!-- User Menu -->
         <li class="nav-item dropdown has-arrow">
             <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                <span class="user-img">Ryan Taylor</span>
+                <span class="user-img"><img class="rounded-circle" src="assets/back/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor"></span>
             </a>
             <div class="dropdown-menu">
                 <div class="user-header">
+                    <div class="avatar avatar-sm">
+                        <img src="assets/back/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
+                    </div>
                     <div class="user-text">
                         <h6>Ryan Taylor</h6>
                         <p class="text-muted mb-0">Administrator</p>
                     </div>
                 </div>
-                <a class="dropdown-item" href="#">My Profile</a>
-                <a class="dropdown-item" href="#">Account Settings</a>
-                <a class="dropdown-item" href="#">Logout</a>
+                <a class="dropdown-item" href="profile.html">My Profile</a>
+                <a class="dropdown-item" href="profile.html">Account Settings</a>
+                <a class="dropdown-item" href="login.html">Logout</a>
             </div>
         </li>
         <!-- /User Menu -->

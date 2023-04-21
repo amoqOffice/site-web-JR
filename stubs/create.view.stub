@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('{{ modelName }}.form', [$title='Nouvel {{ modelName }}', $edit=false, $show=false])
+    @include('back.{{ modelName }}.form', [$title='Nouvel {{ modelName }}', $edit=false, $show=false])
 @endsection

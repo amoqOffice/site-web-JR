@@ -13,8 +13,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $temple = Temple::find(1);
-
-        return view('back/home', compact('temple'));
+        return view('back/home');
     }
 }
