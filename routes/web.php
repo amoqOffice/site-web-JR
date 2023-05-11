@@ -58,3 +58,43 @@ Route::prefix('admin')->group(function () {
 
 
 
+
+/*
+|--------------------------------------------------------------------------
+| Reseau Routes
+|--------------------------------------------------------------------------
+*/
+Route::group(['prefix' => 'reseau'], function () {
+    Route::get('index', 'ReseauController@index')->name('back.reseau.index'); // Liste des reseaus
+
+    Route::get('create', 'ReseauController@create')->name('back.reseau.create'); // Formulaire de création de reseau
+    Route::post('store', 'ReseauController@store')->name('back.reseau.store'); // Enrégistrement de reseau
+
+    Route::get('{id}/show', 'ReseauController@show')->name('back.reseau.show'); //Informations sur reseau
+
+    Route::get('{id}/edit', 'ReseauController@edit')->name('back.reseau.edit'); //Formulaire d'édition de reseau
+    Route::post('{id}/update', 'ReseauController@update')->name('back.reseau.update'); // Enregistrement des modification de reseau
+
+    Route::post('destroy', 'ReseauController@destroy')->name('back.reseau.destroy'); // Suppression de reseau
+    Route::post('destroyAll', 'ReseauController@destroyAll')->name('back.reseau.destroyAll'); // Suppression de plusieurs reseaus
+});
+
+/*
+|--------------------------------------------------------------------------
+| Categorie Routes
+|--------------------------------------------------------------------------
+*/
+Route::group(['prefix' => 'categorie'], function () {
+    Route::get('index', 'CategorieController@index')->name('back.categorie.index'); // Liste des categories
+
+    Route::get('create', 'CategorieController@create')->name('back.categorie.create'); // Formulaire de création de categorie
+    Route::post('store', 'CategorieController@store')->name('back.categorie.store'); // Enrégistrement de categorie
+
+    Route::get('{id}/show', 'CategorieController@show')->name('back.categorie.show'); //Informations sur categorie
+
+    Route::get('{id}/edit', 'CategorieController@edit')->name('back.categorie.edit'); //Formulaire d'édition de categorie
+    Route::post('{id}/update', 'CategorieController@update')->name('back.categorie.update'); // Enregistrement des modification de categorie
+
+    Route::post('destroy', 'CategorieController@destroy')->name('back.categorie.destroy'); // Suppression de categorie
+    Route::post('destroyAll', 'CategorieController@destroyAll')->name('back.categorie.destroyAll'); // Suppression de plusieurs categories
+});

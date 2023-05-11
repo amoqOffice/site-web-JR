@@ -1,3 +1,18 @@
+@php
+    $data = [(object)[
+            'text' => 'Admin',
+            'link' => route('back.home'),
+            'css_class' => 'text-primary',
+        ], (object)[
+            'text' => 'Rédaction',
+            'link' => '#',
+            'css_class' => 'cursor-default',
+        ]
+    ];
+    $content = 'Rédaction';
+@endphp
+@widget('breadcrumb', compact('data', 'content'))
+
 <div class="row">
     <div class="col-xl-12 d-flex">
         <div class="card flex-fill">
