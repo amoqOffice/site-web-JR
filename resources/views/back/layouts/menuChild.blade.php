@@ -1,5 +1,5 @@
 <li class="menu-title">
-    <span>Contenu</span>
+    <span>CONTENU</span>
 </li>
 <li class="{{ request()->is('admin') ? 'active' : '' }}">
     <a href="{{ route('back.home') }}">
@@ -24,11 +24,9 @@
         <!-- <li><a class="{{ request()->is('admin/enseignement/index') ? 'active' : '' }}" href="{{ route('enseignement.index') }}">Liste</a></li> -->
     </ul>
 </li> --}}
-<li class="menu-title">
-    <span>MENUS</span>
-</li>
+
 {{-- Accueil --}}
-<li class="{{ request()->is('admin') ? 'active' : '' }}">
+<li class="{{ request()->is('admin/accueil/index') ? 'active':'' }}">
     <a href="{{ route('back.accueil.index') }}">
         <i class="fe fe-home text-primary"></i>
         <span>Accueil</span>
@@ -48,7 +46,7 @@ A Propos
 <li class="submenu my-2">
     <a href="#"><i class="fe fe-file-word"></i> <span> Redactions</span> <span class="menu-arrow"></span></a>
     <ul style="display: none;">
-        <li><a class="{{ request()->is('redaction/create') ? 'active' : '' }}" href="{{ route('redaction.create') }}">Ajouter</a></li>
-        <li><a class="{{ request()->is('redaction/index') ? 'active' : '' }}" href="{{ route('redaction.index') }}">Liste</a></li>
+        <li><a class="{{ request()->is('admin/redaction/create') ? 'active' : '' }}" href="{{ route('back.redaction.create') }}">Ajouter</a></li>
+        <li><a class="{{ request()->is('admin/redaction/index') ? 'active' : '' }}" href="{{ route('back.redaction.index') }}">Liste</a></li>
     </ul>
 </li>

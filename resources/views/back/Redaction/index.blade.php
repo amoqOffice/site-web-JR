@@ -1,90 +1,71 @@
-@extends('layouts.app')
+@extends('back.layouts.app')
 
 @section('css')
-    {{-- <link rel="stylesheet" href="{{ asset('assets/back/css/excel-bootstrap-table-filter-style.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/back/plugins/datatables/datatables.min.css') }}">
 @endsection
 
 @section('content')
+    @php
+        $data = [(object)[
+                'text' => 'Admin',
+                'link' => route('back.home'),
+                'css_class' => 'text-primary',
+            ], (object)[
+                'text' => 'Rédaction',
+                'link' => '#',
+                'css_class' => 'cursor-default',
+            ]
+        ];
+        $content = 'Rédaction';
+    @endphp
+    @widget('breadcrumb', compact('data', 'content'))
     <div class="row">
         <div class="col-sm-12">
             @include('back.Redaction.delete_modal')
             @include('back.Redaction.deleteAll_modal')
-            <div class="form-group text-ridght">
-                <button class="btn bg-danger-light btn-delete-all" data-togmgle="tooltip" data-plalcement="top"
-                    title="Supprimer" data-toggle="modal" data-target="#deleteAllElement"><i
-                        class="fa fa-trash"></i></button>
-                <a href="{{ route('redaction.index') }}" class="btn bg-warning-light" data-toggle="tooltip"
-                    data-placement="top" title="Rafraîchir"><i class="fa fa-refresh"></i></a>
-                {{-- <a href="" class="btn bg-success-light" data-toggle="tooltip" data-placement="top" title="Imprimer"><i
-                        class="fa fa-print"></i></a> --}}
-                <a href="{{ route('redaction.create') }}" class="btn btn-primary pull-right"><i
-                        class="fa fa-plus"></i> Ajouter </a>
-
+            <div class="form-group text-LEFT">
+                <a href="{{ route('back.redaction.create') }}" class="btn btn-primary"><i
+                        class="fa fa-plus"></i> Faire une Rédaction </a>
             </div>
 
-            <div class="card card-table">
-                <div class="card-header bg-primary">
-                    <h4 class="card-title text-center text-light"> Liste des Redactions </h4>
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title text-dark"> Liste des Rédactions </h4>
                 </div>
                 <div class="card-body">
-                    <div class="">
-                        <table id="table" class="table mb-0 table-hover">
+                    <div class="table-responsive">
+                        <table class="datatable table table-stripped">
                             <thead>
                                 <tr>
-                                    <th>
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" style="margin: 0px 0px 0px 9px;padding: 10px;">
-                                                <input type="checkbox" class="checkbox-parent">
-                                            </span>
-                                        </div>
-                                    </th>
-                                    <th>ID</th>
-                                    {{-- <th class="filter">Noms</th> --}}
-                                    							<th class="filter">Titre</th>
-							<th class="filter">Lieu</th>
-							<th class="filter">Type de Redaction</th>
-							<th class="filter">Date de ublication</th>
-							<th class="filter">Statut</th>
-							<th class="filter">Audio</th>
-
+                                    <th>Titre</th>
+                                    <th>Type de Redaction</th>
+                                    <th>Date de Publication</th>
+                                    <th>Statut</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($redactions as $redaction)
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input style="margin-left: 0.5px;" class="form-check-input checkbox-child"
-                                                    type="checkbox" value="" id="invalidCheck" required="">
-                                            </div>
-                                        </td>
-                                        <td data-id="{{ $redaction->id }}">#{{ $loop->index + 1 }}</td>
-                                        {{-- <td>{{ $car->nom }}</td> --}}
-                                        							<td>{{ $redaction->titre }}</td>
-							<td>{{ $redaction->lieu }}</td>
-							<td>{{ $redaction->type }}</td>
-							<td>{{ $redaction->date_publication }}</td>
-							<td>{{ $redaction->is_published }}</td>
-							<td>{{ $redaction->audio_path }}</td>
-
-                                        <td>
-                                            <a href="{{ route('redaction.show', $redaction->id) }}"
-                                                class="btn bg-success-light btn-sm mr-1" title="Voir">
-                                                <span class="text-success"><i class="fa fa-eye"></i> Voir</span>
-                                            </a>
-                                            <a href="{{ route('redaction.edit', $redaction->id) }}"
-                                                class="btn bg-warning-light btn-sm mr-1" title="Modifier">
-                                                <span class="text-warning"><i class="fa fa-pencil-square-o "></i>
-                                                    Modifier</span>
-                                            </a>
-                                            <a href="#" class="btn bg-danger-light btn-sm btn-delete"
-                                                data-nom="{{ $redaction->nom }}" data-id="{{ $redaction->id }}"
-                                                data-toggle="modal" data-target="#deleteElement" title="Supprimer">
-                                                <span class="text-danger"><i class="fa fa-trash"></i> Supprimer</span>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td>{{ $redaction->titre }}</td>
+                                    <td>{{ ucfirst($redaction->type) }}</td>
+                                    <td class="text-right">{{ date('d/m/Y', strtotime($redaction->date_publication)) }}</td>
+                                    <td><span class="badge {{ $redaction->is_published ? "bg-success-light px-1" : "bg-danger-light" }}"><i class="fa {{ $redaction->is_published ? "fa-check" : "fa-close" }} text-{{ $redaction->is_published ? "success" : "danger" }}"></i></span></td>
+                                    <td>
+                                        <a href="{{ route('back.redaction.show', $redaction->id) }}"
+                                            class="mr-2 text-success" title="Voir"><i class="fa fa-eye"></i> Voir
+                                        </a>
+                                        <a href="{{ route('back.redaction.edit', $redaction->id) }}"
+                                            class="mr-2 text-warning" title="Modifier"><i class="fa fa-pencil-square-o "></i>
+                                                Modifier
+                                        </a>
+                                        <a href="#" class="text-danger"
+                                            data-nom="{{ $redaction->nom }}" data-id="{{ $redaction->id }}"
+                                            data-toggle="modal" data-target="#deleteElement" title="Supprimer">
+                                            <i class="fa fa-trash"></i> Supprimer</span>
+                                        </a>
+                                    </td>
+                                </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -96,9 +77,10 @@
 @endsection
 
 @section('script')
-    {{-- <script src="{{ asset('assets/back/js/excel-bootstrap-table-filter-bundle.min.js') }}"></script> --}}
+    <script src="{{ asset('assets/back/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/back/plugins/datatables/datatables.min.js') }}"></script>
     <script>
-        window.history.pushState('data', 'index', '{{ route('redaction.index') }}')
+        window.history.pushState('data', 'index', '{{ route('back.redaction.index') }}')
 
         // $('#table').excelTableFilter();
 

@@ -13,11 +13,11 @@
                 <button class="btn bg-danger-light btn-delete-all" data-togmgle="tooltip" data-plalcement="top"
                     title="Supprimer" data-toggle="modal" data-target="#deleteAllElement"><i
                         class="fa fa-trash"></i></button>
-                <a href="{{ route('{{ modelVariable }}.index') }}" class="btn bg-warning-light" data-toggle="tooltip"
+                <a href="{{ route('back.{{ modelVariable }}.index') }}" class="btn bg-warning-light" data-toggle="tooltip"
                     data-placement="top" title="Rafraîchir"><i class="fa fa-refresh"></i></a>
                 {{-- <a href="" class="btn bg-success-light" data-toggle="tooltip" data-placement="top" title="Imprimer"><i
                         class="fa fa-print"></i></a> --}}
-                <a href="{{ route('{{ modelVariable }}.create') }}" class="btn btn-primary pull-right"><i
+                <a href="{{ route('back.{{ modelVariable }}.create') }}" class="btn btn-primary pull-right"><i
                         class="fa fa-plus"></i> Ajouter </a>
 
             </div>
@@ -57,11 +57,11 @@
                                         {{-- <td>{{ $car->nom }}</td> --}}
                                         {{ columnValue }}
                                         <td>
-                                            <a href="{{ route('{{ modelVariable }}.show', ${{ modelVariable }}->id) }}"
+                                            <a href="{{ route('back.{{ modelVariable }}.show', ${{ modelVariable }}->id) }}"
                                                 class="btn bg-success-light btn-sm mr-1" title="Voir">
                                                 <span class="text-success"><i class="fa fa-eye"></i> Voir</span>
                                             </a>
-                                            <a href="{{ route('{{ modelVariable }}.edit', ${{ modelVariable }}->id) }}"
+                                            <a href="{{ route('back.{{ modelVariable }}.edit', ${{ modelVariable }}->id) }}"
                                                 class="btn bg-warning-light btn-sm mr-1" title="Modifier">
                                                 <span class="text-warning"><i class="fa fa-pencil-square-o "></i>
                                                     Modifier</span>
@@ -86,7 +86,7 @@
 @section('script')
     {{-- <script src="{{ asset('assets/back/js/excel-bootstrap-table-filter-bundle.min.js') }}"></script> --}}
     <script>
-        window.history.pushState('data', 'index', '{{ route('{{ modelVariable }}.index') }}')
+        window.history.pushState('data', 'index', '{{ route('back.{{ modelVariable }}.index') }}')
 
         // $('#table').excelTableFilter();
 

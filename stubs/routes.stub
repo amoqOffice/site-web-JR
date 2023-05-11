@@ -5,16 +5,16 @@
 |--------------------------------------------------------------------------
 */
 Route::group(['prefix' => '{{ modelVariable }}'], function () {
-    Route::get('index', '{{ controllerName }}@index')->name('{{ modelVariable }}.index'); // Liste des {{ modelVariable }}s
+    Route::get('index', '{{ controllerName }}@index')->name('back.{{ modelVariable }}.index'); // Liste des {{ modelVariable }}s
 
-    Route::get('create', '{{ controllerName }}@create')->name('{{ modelVariable }}.create'); // Formulaire de création de {{ modelVariable }}
-    Route::post('store', '{{ controllerName }}@store')->name('{{ modelVariable }}.store'); // Enrégistrement de {{ modelVariable }}
+    Route::get('create', '{{ controllerName }}@create')->name('back.{{ modelVariable }}.create'); // Formulaire de création de {{ modelVariable }}
+    Route::post('store', '{{ controllerName }}@store')->name('back.{{ modelVariable }}.store'); // Enrégistrement de {{ modelVariable }}
 
-    Route::get('{id}/show', '{{ controllerName }}@show')->name('{{ modelVariable }}.show'); //Informations sur {{ modelVariable }}
+    Route::get('{id}/show', '{{ controllerName }}@show')->name('back.{{ modelVariable }}.show'); //Informations sur {{ modelVariable }}
 
-    Route::get('{id}/edit', '{{ controllerName }}@edit')->name('{{ modelVariable }}.edit'); //Formulaire d'édition de {{ modelVariable }}
-    Route::post('{id}/update', '{{ controllerName }}@update')->name('{{ modelVariable }}.update'); // Enregistrement des modification de {{ modelVariable }}
+    Route::get('{id}/edit', '{{ controllerName }}@edit')->name('back.{{ modelVariable }}.edit'); //Formulaire d'édition de {{ modelVariable }}
+    Route::post('{id}/update', '{{ controllerName }}@update')->name('back.{{ modelVariable }}.update'); // Enregistrement des modification de {{ modelVariable }}
 
-    Route::post('destroy', '{{ controllerName }}@destroy')->name('{{ modelVariable }}.destroy'); // Suppression de {{ modelVariable }}
-    Route::post('destroyAll', '{{ controllerName }}@destroyAll')->name('{{ modelVariable }}.destroyAll'); // Suppression de plusieurs {{ modelVariable }}s
+    Route::post('destroy', '{{ controllerName }}@destroy')->name('back.{{ modelVariable }}.destroy'); // Suppression de {{ modelVariable }}
+    Route::post('destroyAll', '{{ controllerName }}@destroyAll')->name('back.{{ modelVariable }}.destroyAll'); // Suppression de plusieurs {{ modelVariable }}s
 });

@@ -18,9 +18,13 @@ class CreateActivitesTable extends Migration
             $table->string('titre');
             $table->string('description')->nullable();
             $table->string('pays');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('lien_youtube')->nullable();
             $table->string('type');
+            $table->date('date_debut_activite');
+            $table->date('date_fin_activite');
+            $table->date('date_publication');
+            $table->boolean('is_published');
             $table->timestamps();
         });
     }

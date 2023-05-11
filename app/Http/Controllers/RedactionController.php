@@ -26,7 +26,7 @@ class RedactionController extends Controller
 
         Toastr::success('Redaction bien ajouté');
 
-        return redirect()->route('redaction.create');
+        return redirect()->route('back.redaction.create');
     }
 
     public function show($id)
@@ -45,12 +45,23 @@ class RedactionController extends Controller
 
     public function update(Request $request, $id)
     {
+        ($request->is_published == 'on') ? $request->is_published = 1 : $request->is_published = 0;
+
+        // dd($request->all());
         $redaction = Redaction::findOrFail($id);
-        $redaction->update($request->all());
+        $redaction->titre = $request->titre;
+        $redaction->description = $request->description;
+        $redaction->lieu = $request->lieu;
+        $redaction->image = $request->image;
+        $redaction->type = $request->type;
+        $redaction->date_publication = $request->date_publication;
+        $redaction->is_published = $request->is_published;
+        $redaction->audio_path = $request->audio_path;
+        $redaction->save();
 
         Toastr::success('Redaction bien mis à jour');
 
-        return redirect()->route('redaction.index');
+        return redirect()->route('back.redaction.index');
     }
 
     public function destroy()

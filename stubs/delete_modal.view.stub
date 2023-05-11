@@ -29,7 +29,7 @@
         })
         $.ajax({
             type: "post",
-            url: "{{ route('{{ modelVariable }}.destroy') }}",
+            url: "{{ route('back.{{ modelVariable }}.destroy') }}",
             data: {id: $(".nomElement").data("id")},
             success: function (response) {
                 console.log(response)

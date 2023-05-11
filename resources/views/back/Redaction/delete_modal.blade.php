@@ -29,7 +29,7 @@
         })
         $.ajax({
             type: "post",
-            url: "{{ route('redaction.destroy') }}",
+            url: "{{ route('back.redaction.destroy') }}",
             data: {id: $(".nomElement").data("id")},
             success: function (response) {
                 console.log(response)

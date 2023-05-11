@@ -4,7 +4,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class RelationOneToManyTempleEvenement extends Migration
+class RelationOneToManyTempleRedaction extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class RelationOneToManyTempleEvenement extends Migration
      */
     public function up()
     {
-        Schema::table('evenements', function (Blueprint $table) {
+        Schema::table('redactions', function (Blueprint $table) {
             $table->unsignedInteger('temple_id')->nullable();
             $table->foreign('temple_id')->references('id')->on('temples')->onDelete('cascade');
         });

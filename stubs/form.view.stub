@@ -5,11 +5,11 @@
                 <h4 class="card-title text-center text-light"> {{ $title }} </h4>
             </div>
             <div class="card-body">
-                <form action="{{ !$edit ? route('{{ modelVariable }}.store') : route('{{ modelVariable }}.update', ${{ modelVariable }}->id) }}" method="POST">
+                <form action="{{ !$edit ? route('back.{{ modelVariable }}.store') : route('back.{{ modelVariable }}.update', ${{ modelVariable }}->id) }}" method="POST">
                     @csrf
                     {{ rowContent }}
                     <div class="text-right pt-2">
-                        <a href="{{ route('{{ modelVariable }}.index') }}" class="btn btn-sm btn-danger  btn-navs"><i class="fa fa-close"></i> Fermer</a>
+                        <a href="{{ route('back.{{ modelVariable }}.index') }}" class="btn btn-sm btn-danger  btn-navs"><i class="fa fa-close"></i> Fermer</a>
                         @if(!$show)
                             <button type="submit" class="btn btn-sm btn-primary">
                                 <i class="fa fa-floppy-o"></i> Enregistrer

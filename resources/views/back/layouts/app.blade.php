@@ -1,10 +1,12 @@
 {{-- <!DOCTYPE html> --}}
-{{-- <html lang="en"> --}}
-<head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="fr">
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-        <title>Ventura - Dashboard</title>
+        <title>JESUS-REVIENT</title>
+
 
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/back/img/favicon.png') }}">
@@ -18,7 +20,7 @@
 		<!-- Feathericon CSS -->
         <link rel="stylesheet" href="{{ asset('assets/back/css/feathericon.min.css') }}">
 
-		<link rel="stylesheet" href="{{ asset('assets/back/plugins/morris.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/back/plugins/morris/morris.css') }}">
 
 		<!-- Main CSS -->
         <link rel="stylesheet" href="{{ asset('assets/back/css/style.css') }}">
@@ -27,17 +29,18 @@
         <link rel="stylesheet" href="{{ asset('assets/back/css/toastr.min.css') }}">
 
         @yield('css')
-    <style>
-        /* .subdrop {
-            font-weight: bold !important;
-        } */
-        /* .form-check-input {
-            cursor: pointer
-        } */
-        /* input[type=checkbox], input[type=radio] {
-            cursor: pointer
-        } */
-    </style>
+
+        <style>
+            /* .subdrop {
+                font-weight: bold !important;
+            } */
+            /* .form-check-input {
+                cursor: pointer
+            } */
+            /* input[type=checkbox], input[type=radio] {
+                cursor: pointer
+            } */
+        </style>
     </head>
     <body class="mini-sidebars">
 
@@ -67,10 +70,12 @@
         <script src="{{ asset('assets/back/js/bootstrap.min.js') }}"></script>
 
 		<!-- Slimscroll JS -->
-        <script src="{{ asset('assets/back/plugins/jquery.slimscroll.min.js') }}"></script>
+        <script src="{{ asset('assets/back/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
 
         <!-- Raphael JS -->
-        {{-- <script src="{{ asset('assets/back/plugins/raphael.min.js') }}"></script> --}}
+        <script src="{{ asset('assets/back/plugins/raphael/raphael.min.js') }}"></script>
+
+        @yield('script')
 
 		<!-- Custom JS -->
         <script  src="{{ asset('assets/back/js/script.js') }}"></script>
@@ -83,7 +88,7 @@
         {{-- <script src="{{ asset('assets/back/js/excel-bootstrap-table-filter-bundle.min.js') }}"></script> --}}
 
 
-        @yield('script')
+        
 
         <script type="text/javascript">
             $(document).ready(function() {
@@ -99,6 +104,5 @@
             //     $('.contenu').load( $(this).attr('href'))
             // });
         </script>
-
     </body>
 </html>

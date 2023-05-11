@@ -38,7 +38,13 @@ class Temple extends Model
         return $this->hasOne(Programme::class, 'temple_programme');
     }
 
+    public function redactions()
+    {
+        return $this->hasMany(Redaction::class, 'temple_redaction');
+    }
+
     //
+
 
 
 
