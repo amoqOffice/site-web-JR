@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Pays extends Model
 {
     protected $guarded = ['id'];
-
     public function temples()
     {
         return $this->hasMany(Temple::class, 'pays_temple');
@@ -19,6 +18,4 @@ class Pays extends Model
     }
 
     //
-
-
 }

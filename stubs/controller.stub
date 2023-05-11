@@ -50,7 +50,7 @@ class {{ class }} extends Controller
 
         Toastr::success('{{ model }} bien mis à jour');
 
-        return redirect()->route('{{ modelVariable }}.index');
+        return redirect()->route('back.{{ modelVariable }}.index');
     }
 
     public function destroy()
