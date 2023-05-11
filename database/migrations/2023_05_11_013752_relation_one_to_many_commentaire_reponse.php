@@ -4,7 +4,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class RelationOneToManyRubriqueSubheading extends Migration
+class RelationOneToManyCommentaireReponse extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class RelationOneToManyRubriqueSubheading extends Migration
      */
     public function up()
     {
-        Schema::table('subheadings', function (Blueprint $table) {
-            $table->unsignedInteger('rubrique_id')->nullable();
-            $table->foreign('rubrique_id')->references('id')->on('rubriques')->onDelete('cascade');
+        Schema::table('reponses', function (Blueprint $table) {
+            $table->unsignedInteger('commentaire_id')->nullable();
+            $table->foreign('commentaire_id')->references('id')->on('commentaires')->onDelete('cascade');
         });
     }
 

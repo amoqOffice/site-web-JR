@@ -18,7 +18,7 @@ class CreateCultesTable extends Migration
             $table->string('titre');
             $table->string('description')->nullable();
             $table->string('image');
-            $table->string('lien');
+            $table->string('lien_youtube');
             $table->string('type');
             $table->timestamps();
         });

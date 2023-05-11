@@ -23,7 +23,25 @@ class Responsable extends Model
         return $this->belongsToMany(Culte::class, 'responsable_culte');
     }
 
+    public function redactions()
+    {
+        return $this->belongsToMany(Redaction::class, 'redaction_responsable');
+    }
+
+    public function pays()
+    {
+        return $this->belongsTo(Pays::class, 'pays_responsable');
+    }
+
+    public function emissions()
+    {
+        return $this->belongsToMany(Emission::class, 'responsable_emission');
+    }
+
     //
+
+
+
 
 
 

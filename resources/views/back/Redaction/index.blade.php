@@ -1,4 +1,4 @@
-@extends('back.layouts.app')
+@extends('layouts.app')
 
 @section('css')
     {{-- <link rel="stylesheet" href="{{ asset('assets/back/css/excel-bootstrap-table-filter-style.css') }}"> --}}
@@ -7,24 +7,24 @@
 @section('content')
     <div class="row">
         <div class="col-sm-12">
-            @include('back.Enseignement.delete_modal')
-            @include('back.Enseignement.deleteAll_modal')
+            @include('back.Redaction.delete_modal')
+            @include('back.Redaction.deleteAll_modal')
             <div class="form-group text-ridght">
                 <button class="btn bg-danger-light btn-delete-all" data-togmgle="tooltip" data-plalcement="top"
                     title="Supprimer" data-toggle="modal" data-target="#deleteAllElement"><i
                         class="fa fa-trash"></i></button>
-                <a href="{{ route('enseignement.index') }}" class="btn bg-warning-light" data-toggle="tooltip"
+                <a href="{{ route('redaction.index') }}" class="btn bg-warning-light" data-toggle="tooltip"
                     data-placement="top" title="Rafraîchir"><i class="fa fa-refresh"></i></a>
                 {{-- <a href="" class="btn bg-success-light" data-toggle="tooltip" data-placement="top" title="Imprimer"><i
                         class="fa fa-print"></i></a> --}}
-                <a href="{{ route('enseignement.create') }}" class="btn btn-primary pull-right"><i
+                <a href="{{ route('redaction.create') }}" class="btn btn-primary pull-right"><i
                         class="fa fa-plus"></i> Ajouter </a>
 
             </div>
 
             <div class="card card-table">
                 <div class="card-header bg-primary">
-                    <h4 class="card-title text-center text-light"> Liste des Enseignements </h4>
+                    <h4 class="card-title text-center text-light"> Liste des Redactions </h4>
                 </div>
                 <div class="card-body">
                     <div class="">
@@ -41,14 +41,17 @@
                                     <th>ID</th>
                                     {{-- <th class="filter">Noms</th> --}}
                                     							<th class="filter">Titre</th>
-							<th class="filter">Description</th>
 							<th class="filter">Lieu</th>
+							<th class="filter">Type de Redaction</th>
+							<th class="filter">Date de ublication</th>
+							<th class="filter">Statut</th>
+							<th class="filter">Audio</th>
 
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($enseignements as $enseignement)
+                                @foreach ($redactions as $redaction)
                                     <tr>
                                         <td>
                                             <div class="form-check">
@@ -56,24 +59,27 @@
                                                     type="checkbox" value="" id="invalidCheck" required="">
                                             </div>
                                         </td>
-                                        <td data-id="{{ $enseignement->id }}">#{{ $loop->index + 1 }}</td>
+                                        <td data-id="{{ $redaction->id }}">#{{ $loop->index + 1 }}</td>
                                         {{-- <td>{{ $car->nom }}</td> --}}
-                                        							<td>{{ $enseignement->titre }}</td>
-							<td>{{ $enseignement->description }}</td>
-							<td>{{ $enseignement->lieu }}</td>
+                                        							<td>{{ $redaction->titre }}</td>
+							<td>{{ $redaction->lieu }}</td>
+							<td>{{ $redaction->type }}</td>
+							<td>{{ $redaction->date_publication }}</td>
+							<td>{{ $redaction->is_published }}</td>
+							<td>{{ $redaction->audio_path }}</td>
 
                                         <td>
-                                            <a href="{{ route('enseignement.show', $enseignement->id) }}"
+                                            <a href="{{ route('redaction.show', $redaction->id) }}"
                                                 class="btn bg-success-light btn-sm mr-1" title="Voir">
                                                 <span class="text-success"><i class="fa fa-eye"></i> Voir</span>
                                             </a>
-                                            <a href="{{ route('enseignement.edit', $enseignement->id) }}"
+                                            <a href="{{ route('redaction.edit', $redaction->id) }}"
                                                 class="btn bg-warning-light btn-sm mr-1" title="Modifier">
                                                 <span class="text-warning"><i class="fa fa-pencil-square-o "></i>
                                                     Modifier</span>
                                             </a>
                                             <a href="#" class="btn bg-danger-light btn-sm btn-delete"
-                                                data-nom="{{ $enseignement->nom }}" data-id="{{ $enseignement->id }}"
+                                                data-nom="{{ $redaction->nom }}" data-id="{{ $redaction->id }}"
                                                 data-toggle="modal" data-target="#deleteElement" title="Supprimer">
                                                 <span class="text-danger"><i class="fa fa-trash"></i> Supprimer</span>
                                             </a>
@@ -92,7 +98,7 @@
 @section('script')
     {{-- <script src="{{ asset('assets/back/js/excel-bootstrap-table-filter-bundle.min.js') }}"></script> --}}
     <script>
-        window.history.pushState('data', 'index', '{{ route('enseignement.index') }}')
+        window.history.pushState('data', 'index', '{{ route('redaction.index') }}')
 
         // $('#table').excelTableFilter();
 

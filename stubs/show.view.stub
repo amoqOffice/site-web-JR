@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('back.layouts.app')
 
 @section('content')
     @include('{{ modelName }}.form', [$title='Détails de {{ modelName }}', $edit=false, $show=true])

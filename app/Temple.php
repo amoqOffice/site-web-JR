@@ -23,7 +23,25 @@ class Temple extends Model
         return $this->hasMany(Activite::class);
     }
 
+    public function pays()
+    {
+        return $this->belongsTo(Pays::class, 'pays_temple');
+    }
+
+    public function evenements()
+    {
+        return $this->hasMany(Evenement::class, 'temple_evenement');
+    }
+
+    public function programme()
+    {
+        return $this->hasOne(Programme::class, 'temple_programme');
+    }
+
     //
+
+
+
 
 
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEnseignementsTable extends Migration
+class CreateRedactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class CreateEnseignementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('enseignements', function (Blueprint $table) {
+        Schema::create('redactions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titre');
-            $table->string('description');
+            $table->text('description');
             $table->string('lieu');
             $table->string('image');
-            $table->string('audio')->nullable();
+            $table->string('type');
+            $table->date('date_publication');
+            $table->boolean('is_published')->default(false);
+            $table->string('audio_path')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +34,6 @@ class CreateEnseignementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('enseignements');
+        Schema::dropIfExists('redactions');
     }
 }

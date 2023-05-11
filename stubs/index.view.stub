@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('back.layouts.app')
 
 @section('css')
     {{-- <link rel="stylesheet" href="{{ asset('assets/back/css/excel-bootstrap-table-filter-style.css') }}"> --}}

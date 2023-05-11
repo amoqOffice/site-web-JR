@@ -2,7 +2,7 @@
 <li class="submenu my-2">
     <a href="#"><i class="{{ menuIcon }}"></i> <span> {{ menuName }}s</span> <span class="menu-arrow"></span></a>
     <ul style="display: none;">
-        <li><a class="{{ request()->is('{{ modelVariable }}/create') ? 'active' : '' }}" href="{{ route('{{ modelVariable }}.create') }}">Ajouter</a></li>
-        <li><a class="{{ request()->is('{{ modelVariable }}/index') ? 'active' : '' }}" href="{{ route('{{ modelVariable }}.index') }}">Liste</a></li>
+        <li><a class="{{ request()->is('{{ modelVariable }}/create') ? 'active' : '' }}" href="{{ route('back.{{ modelVariable }}.create') }}">Ajouter</a></li>
+        <li><a class="{{ request()->is('{{ modelVariable }}/index') ? 'active' : '' }}" href="{{ route('back.{{ modelVariable }}.index') }}">Liste</a></li>
     </ul>
 </li>

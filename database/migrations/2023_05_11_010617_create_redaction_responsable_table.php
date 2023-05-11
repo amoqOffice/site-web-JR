@@ -4,7 +4,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResponsableEnseignementTable extends Migration
+class CreateRedactionResponsableTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateResponsableEnseignementTable extends Migration
      */
     public function up()
     {
-        Schema::create('responsable_enseignement', function (Blueprint $table) {
+        Schema::create('redaction_responsable', function (Blueprint $table) {
+            $table->integer('redaction_id')->unsigned()->nullable();
+            $table->foreign('redaction_id')->references('id')->on('redactions');
             $table->integer('responsable_id')->unsigned()->nullable();
             $table->foreign('responsable_id')->references('id')->on('responsables');
-            $table->integer('enseignement_id')->unsigned()->nullable();
-            $table->foreign('enseignement_id')->references('id')->on('enseignements');
         });
     }
 

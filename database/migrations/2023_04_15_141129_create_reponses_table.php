@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubheadingsTable extends Migration
+class CreateReponsesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateSubheadingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('subheadings', function (Blueprint $table) {
+        Schema::create('reponses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nom');
+            $table->text('message');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateSubheadingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subheadings');
+        Schema::dropIfExists('reponses');
     }
 }

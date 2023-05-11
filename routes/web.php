@@ -27,21 +27,32 @@ Route::prefix('admin')->group(function () {
 
     /*
     |--------------------------------------------------------------------------
-    | Enseignement Routes
+    | Accueil Routes
     |--------------------------------------------------------------------------
     */
-    Route::group(['prefix' => 'enseignement'], function () {
-        Route::get('index', 'EnseignementController@index')->name('enseignement.index'); // Liste des enseignements
-
-        Route::get('create', 'EnseignementController@create')->name('enseignement.create'); // Formulaire de création de enseignement
-        Route::post('store', 'EnseignementController@store')->name('enseignement.store'); // Enrégistrement de enseignement
-
-        Route::get('{id}/show', 'EnseignementController@show')->name('enseignement.show'); //Informations sur enseignement
-
-        Route::get('{id}/edit', 'EnseignementController@edit')->name('enseignement.edit'); //Formulaire d'édition de enseignement
-        Route::post('{id}/update', 'EnseignementController@update')->name('enseignement.update'); // Enregistrement des modification de enseignement
-
-        Route::post('destroy', 'EnseignementController@destroy')->name('enseignement.destroy'); // Suppression de enseignement
-        Route::post('destroyAll', 'EnseignementController@destroyAll')->name('enseignement.destroyAll'); // Suppression de plusieurs enseignements
+    Route::group(['prefix' => 'accueil'], function () {
+        Route::get('index', 'AccueilController@index')->name('back.accueil.index'); // Liste des accueils
     });
+});
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Redaction Routes
+|--------------------------------------------------------------------------
+*/
+Route::group(['prefix' => 'redaction'], function () {
+    Route::get('index', 'RedactionController@index')->name('redaction.index'); // Liste des redactions
+
+    Route::get('create', 'RedactionController@create')->name('redaction.create'); // Formulaire de création de redaction
+    Route::post('store', 'RedactionController@store')->name('redaction.store'); // Enrégistrement de redaction
+
+    Route::get('{id}/show', 'RedactionController@show')->name('redaction.show'); //Informations sur redaction
+
+    Route::get('{id}/edit', 'RedactionController@edit')->name('redaction.edit'); //Formulaire d'édition de redaction
+    Route::post('{id}/update', 'RedactionController@update')->name('redaction.update'); // Enregistrement des modification de redaction
+
+    Route::post('destroy', 'RedactionController@destroy')->name('redaction.destroy'); // Suppression de redaction
+    Route::post('destroyAll', 'RedactionController@destroyAll')->name('redaction.destroyAll'); // Suppression de plusieurs redactions
 });

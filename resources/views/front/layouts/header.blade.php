@@ -137,6 +137,9 @@
 						</ul>
 					</li>
 
+					<!-- Nav item 5 link-->
+					<li class="nav-item"> <a class="nav-link" href="dashboard.html">Blog</a></li>
+
 					<!-- Nav item 4 Mega menu -->
 					<li class="nav-item dropdown dropdown-fullwidth">
 						<a class="nav-link dropdown-toggle" href="#" id="megaMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Emissions TV</a>
@@ -228,7 +231,7 @@
 							</div>
 						</div>
 					</li>
-
+					
 					<!-- Nav item 5 link-->
 					<li class="nav-item"> <a class="nav-link" href="dashboard.html">Bible</a></li>
 				</ul>
@@ -291,7 +294,10 @@
 				</div> --}}
 				<!-- Nav Button -->
 				<div class="nav-item d-none d-md-block">
-					<a href="#" class="btn btn-sm btn-danger mb-0 mx-2">Faire un don!</a>
+					<a href="#" class="btn btn-sm btn-danger mb-0 mx-2">Direct TV</a>
+				</div>
+				<div class="nav-item d-none d-md-block">
+					<a href="#" class="btn btn-sm btn-primary mb-0 mx-2">Faire un don</a>
 				</div>
 				<!-- Nav Search -->
 				{{-- <div class="nav-item dropdown nav-search dropdown-toggle-icon-none">
