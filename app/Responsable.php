@@ -33,7 +33,13 @@ class Responsable extends Model
         return $this->belongsToMany(Emission::class, 'responsable_emission');
     }
 
+    public function activites()
+    {
+        return $this->belongsToMany(Activite::class, 'activite_responsable');
+    }
+
     //
+
 
 
 

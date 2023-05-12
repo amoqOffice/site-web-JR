@@ -54,15 +54,23 @@ A Propos
 <li class="submenu my-2">
     <a href="#"><i class="fe fe-google text-danger"></i> <span> Réseaux sociaux</span> <span class="menu-arrow"></span></a>
     <ul style="display: none;">
-        <li><a class="{{ request()->is('reseau/create') ? 'active' : '' }}" href="{{ route('back.reseau.create') }}">Ajouter</a></li>
-        <li><a class="{{ request()->is('reseau/index') ? 'active' : '' }}" href="{{ route('back.reseau.index') }}">Liste</a></li>
+        <li><a class="{{ request()->is('admin/reseau/create') ? 'active' : '' }}" href="{{ route('back.reseau.create') }}">Ajouter</a></li>
+        <li><a class="{{ request()->is('admin/reseau/index') ? 'active' : '' }}" href="{{ route('back.reseau.index') }}">Liste</a></li>
     </ul>
 </li>
 {{-- Categories --}}
 <li class="submenu my-2">
     <a href="#"><i class="fe fe-list-bullet"></i> <span> Catégories</span> <span class="menu-arrow"></span></a>
     <ul style="display: none;">
-        <li><a class="{{ request()->is('categorie/create') ? 'active' : '' }}" href="{{ route('back.categorie.create') }}">Ajouter</a></li>
-        <li><a class="{{ request()->is('categorie/index') ? 'active' : '' }}" href="{{ route('back.categorie.index') }}">Liste</a></li>
+        <li><a class="{{ request()->is('admin/categorie/create') ? 'active' : '' }}" href="{{ route('back.categorie.create') }}">Ajouter</a></li>
+        <li><a class="{{ request()->is('admin/categorie/index') ? 'active' : '' }}" href="{{ route('back.categorie.index') }}">Liste</a></li>
+    </ul>
+</li>
+{{-- Emissions --}}
+<li class="submenu my-2">
+    <a href="#"><i class="fe fe-video text-danger"></i> <span> Emissions TV</span> <span class="menu-arrow"></span></a>
+    <ul style="display: none;">
+        <li><a class="{{ request()->is('admin/emission/create') ? 'active' : '' }}" href="{{ route('back.emission.create') }}">Ajouter</a></li>
+        <li><a class="{{ request()->is('admin/emission/index') ? 'active' : '' }}" href="{{ route('back.emission.index') }}">Liste</a></li>
     </ul>
 </li>

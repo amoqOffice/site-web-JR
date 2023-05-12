@@ -88,18 +88,25 @@ class MakeCrudCommand extends Command
 
         $modelPath = "app/$modelName.php";
 
-        $this->createDir($modelPath);
+        if (!file_exists($modelPath)) {
+            dd('no');
+            $this->createDir($modelPath);
 
-        $newModelContent = $this->files->get("stubs/model.stub");
+            $newModelContent = $this->files->get("stubs/model.stub");
 
-        $newModelContent = str_replace('{{ class }}', $modelName, $newModelContent);
+            $newModelContent = str_replace('{{ class }}', $modelName, $newModelContent);
 
-        // Efface le contenu du fichier
-        $this->files->replace($modelPath, '');
+            // Efface le contenu du fichier
+            $this->files->replace($modelPath, '');
 
-        $this->files->append($modelPath, $newModelContent);
+            $this->files->append($modelPath, $newModelContent);
 
-        $this->info("Model $modelName est bien mis à jour.");
+            $this->info("Model $modelName est bien mis à jour.");
+
+        } else {
+            $this->info("Model $modelName existe deja.");
+        }
+        
     }
 
     public function appendView($name, $viewName)

@@ -13,7 +13,13 @@ class Activite extends Model
         return $this->belongsTo(Temple::class);
     }
 
+    public function responsables()
+    {
+        return $this->belongsToMany(Responsable::class, 'activite_responsable');
+    }
+
     //
+
 
 
 }

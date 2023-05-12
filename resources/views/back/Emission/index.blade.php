@@ -5,26 +5,41 @@
 @endsection
 
 @section('content')
+    @php
+        $data = [(object)[
+                'text' => 'Admin',
+                'link' => route('back.home'),
+                'css_class' => 'text-primary',
+            ], (object)[
+                'text' => 'Emission',
+                'link' => '#',
+                'css_class' => 'cursor-default',
+            ]
+        ];
+        $content = 'Emission';
+    @endphp
+    @widget('breadcrumb', compact('data', 'content'))
+
     <div class="row">
         <div class="col-sm-12">
-            @include('back.{{ modelName }}.delete_modal')
-            @include('back.{{ modelName }}.deleteAll_modal')
+            @include('back.Emission.delete_modal')
+            @include('back.Emission.deleteAll_modal')
             <div class="form-group text-ridght">
                 <button class="btn bg-danger-light btn-delete-all" data-togmgle="tooltip" data-plalcement="top"
                     title="Supprimer" data-toggle="modal" data-target="#deleteAllElement"><i
                         class="fa fa-trash"></i></button>
-                <a href="{{ route('back.{{ modelVariable }}.index') }}" class="btn bg-warning-light" data-toggle="tooltip"
+                <a href="{{ route('back.emission.index') }}" class="btn bg-warning-light" data-toggle="tooltip"
                     data-placement="top" title="Rafraîchir"><i class="fa fa-refresh"></i></a>
                 {{-- <a href="" class="btn bg-success-light" data-toggle="tooltip" data-placement="top" title="Imprimer"><i
                         class="fa fa-print"></i></a> --}}
-                <a href="{{ route('back.{{ modelVariable }}.create') }}" class="btn btn-primary pull-right"><i
-                        class="fa fa-plus"></i> Ajouter un(e) {{ modelName }}</a>
+                <a href="{{ route('back.emission.create') }}" class="btn btn-primary pull-right"><i
+                        class="fa fa-plus"></i> Ajouter une Emission </a>
 
             </div>
 
             <div class="card card-table">
                 <div class="card-header">
-                    <h4 class="card-title"> Liste des {{ modelName }}s </h4>
+                    <h4 class="card-title"> Liste des Emissions </h4>
                 </div>
                 <div class="card-body">
                     <div class="">
@@ -40,12 +55,13 @@
                                     </th>
                                     <th>ID</th>
                                     {{-- <th class="filter">Noms</th> --}}
-                                    {{ columnName }}
+                                    							<th class="filter">Nom</th>
+
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (${{ modelVariable }}s as ${{ modelVariable }})
+                                @foreach ($emissions as $emission)
                                     <tr>
                                         <td>
                                             <div class="form-check">
@@ -53,21 +69,22 @@
                                                     type="checkbox" value="" id="invalidCheck" required="">
                                             </div>
                                         </td>
-                                        <td data-id="{{ ${{ modelVariable }}->id }}">#{{ $loop->index + 1 }}</td>
+                                        <td data-id="{{ $emission->id }}">#{{ $loop->index + 1 }}</td>
                                         {{-- <td>{{ $car->nom }}</td> --}}
-                                        {{ columnValue }}
+                                        							<td>{{ $emission->nom }}</td>
+
                                         <td>
-                                            <a href="{{ route('back.{{ modelVariable }}.show', ${{ modelVariable }}->id) }}"
+                                            <a href="{{ route('back.emission.show', $emission->id) }}"
                                                 class="btn bg-success-light btn-sm mr-1" title="Voir">
                                                 <span class="text-success"><i class="fa fa-eye"></i> Voir</span>
                                             </a>
-                                            <a href="{{ route('back.{{ modelVariable }}.edit', ${{ modelVariable }}->id) }}"
+                                            <a href="{{ route('back.emission.edit', $emission->id) }}"
                                                 class="btn bg-warning-light btn-sm mr-1" title="Modifier">
                                                 <span class="text-warning"><i class="fa fa-pencil-square-o "></i>
                                                     Modifier</span>
                                             </a>
                                             <a href="#" class="btn bg-danger-light btn-sm btn-delete"
-                                                data-nom="{{ ${{ modelVariable }}->nom }}" data-id="{{ ${{ modelVariable }}->id }}"
+                                                data-nom="{{ $emission->nom }}" data-id="{{ $emission->id }}"
                                                 data-toggle="modal" data-target="#deleteElement" title="Supprimer">
                                                 <span class="text-danger"><i class="fa fa-trash"></i> Supprimer</span>
                                             </a>
@@ -86,7 +103,7 @@
 @section('script')
     {{-- <script src="{{ asset('assets/back/js/excel-bootstrap-table-filter-bundle.min.js') }}"></script> --}}
     <script>
-        window.history.pushState('data', 'index', '{{ route('back.{{ modelVariable }}.index') }}')
+        window.history.pushState('data', 'index', '{{ route('back.emission.index') }}')
 
         // $('#table').excelTableFilter();
 
